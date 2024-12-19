@@ -31,7 +31,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  block-size: 364px;
+  min-block-size: 364px;
   font-family: var(--font-accent-family);
   margin-block: 102px;
   border: 2px solid var(--primary-black);
@@ -45,10 +45,9 @@
 }
 
 .header__logo {
-  block-size: 65px;
   margin-block-end: 20px;
-  font-size: 65px;
-  font-variation-settings: "wght" var(--font-main-weight);
+  font-size: clamp(2rem, 5vw, 4.0625rem);;
+  font-weight: var(--font-main-weight);
   text-transform: uppercase;
   line-height: 65px;
 }
@@ -56,8 +55,7 @@
 .header__tagline {
   flex-wrap: nowrap;
   text-transform: uppercase;
-  font-size: 23px;
-  block-size: 23px;
+  font-size: clamp(0.875rem, 0.226rem + 2.7692cqi, 1.4375rem);
 }
 
 .main {
@@ -73,7 +71,6 @@
 .learning-card__title {
   display: flex;
   align-items: center;
-  max-block-size: 55px;
   font-variation-settings: "wght" var(--font-weight-heading, 700);
   font-family: var(--font-main-family);
   font-size: var(--font-size-main);
@@ -97,7 +94,7 @@
   font-family: var(--font-accent-family);
   font-size: 14px;
   line-height: 14px;
-  text-shadow: 0 0 1px var(--primary-white);
+  text-shadow: 0 2px 5px var(--primary-white);
   mix-blend-mode: hard-light;
 }
 
@@ -158,6 +155,7 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  transition: box-shadow 0.3s ease-in-out; 
 }
 
 .button__text {
@@ -217,12 +215,14 @@
 }
 
 .modal {
+  display: none;
+}
+
+.modal[open] {
+  display: block;
   background-color: var(--primary-white);
   max-width: 353px;
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
   padding: 30px;
   border: 2px solid var(--primary-black);
   z-index: 3;
@@ -255,7 +255,7 @@
   text-align: left;
 }
 
-.button--secondary {
+.button__secondary {
   width: 100%;
   font-family: var(--font-accent-family);
   font-size: 14px;
@@ -302,19 +302,12 @@
 @media (width <= 375px) {
   .header {
       inline-size: 100vw;
-      block-size: 323px;
+      min-block-size: 323px;
   }
 
   .header__logo {
-      inline-size: 343px;
-      block-size: 49px;
       font-size: 49px;
       line-height: 49px;
-  }
-
-  .header__tagline {
-      font-size: 14px;
-      block-size: 14px;
   }
 
   .card__image-overlay {
