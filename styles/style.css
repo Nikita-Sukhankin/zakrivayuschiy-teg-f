@@ -46,7 +46,7 @@
 
 .header__logo {
   margin-block-end: 20px;
-  font-size: clamp(2rem, 5vw, 4.0625rem);;
+  font-size: clamp(2rem, 5vw, 4.0625rem);
   font-weight: var(--font-main-weight);
   text-transform: uppercase;
   line-height: 65px;
@@ -155,7 +155,7 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: box-shadow 0.3s ease-in-out; 
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .button__text {
