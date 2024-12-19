@@ -1,1 +1,36 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+   :root {
+    --font-main-family: "Inter", sans-serif;
+    --font-accent-family: "PressStart2P", fantasy;
+    --font-main-weight: 400;
+    --font-weight-heading: 700;
+    --primary-black: #000;
+    --primary-white: #fff;
+    --font-size-main: 18px;
+    --line-height: 21.78px;
+    --page-background-color: #fff;
+    --background-color-top: #e7e7e7;
+    --background-color-bottom: #1a1a1a;
+    --background-color-line: #d3d3d3;
+    --background-image-pattern: repeating-linear-gradient(
+            to right,
+            var(--background-color-line) 0px,
+            var(--background-color-line) 2px,
+            transparent 2px,
+            transparent 4px
+    );
+    --background-image-grid: repeating-linear-gradient(
+        to bottom,
+        var(--background-color-line) 0px,
+        var(--background-color-line) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    --background-image-fade: linear-gradient(
+        to bottom,
+        var(--background-color-top) 0.01%,
+        var(--background-color-bottom) 100%
+    );
+   }
+
+   
